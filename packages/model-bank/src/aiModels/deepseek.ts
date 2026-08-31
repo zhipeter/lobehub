@@ -60,6 +60,36 @@ const deepseekChatModels: AIChatModelCard[] = [
     },
     type: 'chat',
   },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description:
+      'DeepSeek V4 Flash Vision Exp is the experimental multimodal vision model from DeepSeek. It matches DeepSeek V4 Flash on text Agent, reasoning, and world-knowledge tasks while adding strong visual understanding for multimodal Agent scenarios. It supports mixed text-image input via Chat Completions, Messages, and Responses APIs.',
+    displayName: 'DeepSeek V4 Flash Vision Exp',
+    enabled: true,
+    family: 'deepseek',
+    generation: 'deepseek-v4',
+    id: 'deepseek-v4-flash-vision-exp',
+    maxOutput: 393_216,
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 4.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-08-21',
+    settings: {
+      extendParams: ['deepseekV4GAReasoningEffort'],
+    },
+    type: 'chat',
+  },
 ];
 
 export const allModels = [...deepseekChatModels];
